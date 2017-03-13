@@ -17,11 +17,11 @@ contact: ["a.miotto@griffith.edu.au"]    # boxed, comma-separated list of contac
 etherpad:         # optional (insert the URL for your Etherpad if you're using one)
 eventbrite:       # optional (insert the alphanumeric key for Eventbrite registration, e.g., "1234567890AB")
 ---
+
 <!-- See instructions in the comments below for how to edit specific sections of this workshop template. -->
 
 <!--
   HEADER
-
   Edit the values in the block above to be appropriate for your workshop.
   If the value is not 'true', 'false', 'null', or a number, please use
   double quotation marks around the value, unless specified otherwise.
@@ -30,7 +30,6 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
 
 <!--
   EVENTBRITE
-
   This block includes the Eventbrite registration widget if
   'eventbrite' has been set in the header.  You can delete it if you
   are not using Eventbrite, or leave it in, since it will not be
@@ -50,7 +49,6 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
 
 <!--
   INTRODUCTION
-
   Edit the general explanatory paragraph below if you want to change
   the pitch.
 -->
@@ -75,7 +73,6 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
 
 <!--
   AUDIENCE
-
   Explain who your audience is.  (In particular, tell readers if the
   workshop is only open to people from a particular institution.
 -->
@@ -88,7 +85,6 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
 
 <!--
   LOCATION
-
   This block displays the address and links to maps showing directions
   if the latitude and longitude of the workshop have been set.  You
   can use http://itouchmap.com/latlong.html to find the lat/long of an
@@ -107,7 +103,6 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
 
 <!--
   SPECIAL REQUIREMENTS
-
   Modify the block below if there are any special requirements.
 -->
 <p id="requirements">
@@ -121,7 +116,6 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
 
 <!--
   ACCESSIBILITY
-
   Modify the block below if there are any barriers to accessibility or
   special instructions.
 -->
@@ -138,7 +132,6 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
 
 <!--
   CONTACT EMAIL ADDRESS
-
   Display the contact email address set in the configuration file.
 -->
 <p id="contact">
@@ -162,6 +155,66 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
 </p>
 
 <hr/>
+
+<!--
+  SCHEDULE
+  Show the workshop's schedule.  Edit the items and times in the table
+  to match your plans.  You may also want to change 'Day 1' and 'Day
+  2' to be actual dates or days of the week.
+-->
+<h2 id="schedule">Schedule</h2>
+
+<!-- DO NOT EDIT SURVEY LINKS -->
+<p><em>Surveys</em></p>
+<p>Please be sure to complete these surveys before and after the workshop.</p>
+<p><a href="{{ site.pre_survey }}{{ site.github.project_title }}">Pre-workshop Survey</a></p>
+<p><a href="{{ site.post_survey }}{{ site.github.project_title }}">Post-workshop Survey</a></p>
+
+<div class="row">
+  <div class="col-md-6">
+    <h3>Day 1</h3>
+    <table class="table table-striped">
+      <tr> <td>09:00</td>  <td>Automating tasks with the Unix shell</td> </tr>
+      <tr> <td>10:30</td> <td>Morning tea</td> </tr>
+      <tr> <td>12:00</td>  <td>Lunch break</td> </tr>
+      <tr> <td>13:00</td>  <td>Building programs with Python</td> </tr>
+      <tr> <td>14:30</td>  <td>Afternoon tea</td> </tr>
+      <tr> <td>16:00</td>  <td>Wrap-up</td> </tr>
+    </table>
+  </div>
+  <div class="col-md-6">
+    <h3>Day 2</h3>
+    <table class="table table-striped">
+      <tr> <td>09:00</td>  <td>Version control with Git</td> </tr>
+      <tr> <td>10:30</td>  <td>Morning tea</td> </tr>
+      <tr> <td>12:00</td>  <td>Lunch break</td> </tr>
+      <tr> <td>13:00</td>  <td>Python part 2</td> </tr>
+      <tr> <td>14:30</td>  <td>Afternoon tea</td> </tr>
+      <tr> <td>16:00</td>  <td>Wrap-up</td> </tr>
+    </table>
+  </div>
+</div>
+
+<!--
+  ETHERPAD
+  At `_misc/etherpad.txt` you will find a template for the etherpad.
+  Display the Etherpad for the workshop.  You can set this up in
+  advance or on the first day; either way, make sure you push changes
+  to GitHub after you have its URL.  To create an Etherpad, go to
+      http://pad.software-carpentry.org/YYYY-MM-DD-site
+  where 'YYYY-MM-DD-site' is the identifier for your workshop,
+  e.g., '2015-06-10-esu'.
+-->
+{% if page.etherpad %}
+<p id="etherpad">
+  <strong>Etherpad:</strong> <a href="{{page.etherpad}}">{{page.etherpad}}</a>.
+  <br/>
+  We will use this Etherpad for chatting, taking notes, and sharing URLs and bits of code.
+</p>
+{% endif %}
+
+<hr/>
+
 
 <!--
   SCHEDULE
